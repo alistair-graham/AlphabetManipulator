@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/AlphabetManipulator.Tests.props" />
+</Project>

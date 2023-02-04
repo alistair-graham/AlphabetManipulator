@@ -1,0 +1,15 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true
+  },
+  "profiles": {
+    "AlphabetManipulator.Tests": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:48099",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
