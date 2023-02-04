@@ -29,14 +29,12 @@
     <None Remove="Unit\" />
     <None Remove="Moq" />
     <None Remove="Unit\Services\" />
-    <None Remove="Unit\Services\AlphabetWriters\" />
     <None Remove="Microsoft.AspNetCore.Mvc.Testing" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Unit\" />
     <Folder Include="Integration\Controllers\" />
     <Folder Include="Unit\Services\" />
-    <Folder Include="Unit\Services\AlphabetWriters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlphabetManipulator\AlphabetManipulator.csproj">

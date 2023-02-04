@@ -1,4 +1,4 @@
-﻿namespace AlphabetManipulator.Services.AlphabetWriters
+﻿namespace AlphabetManipulator.Services.GeometricAlphabetService
 {
 	public class DiamondAlphabet : IGeometricAlphabet
     {

@@ -20,7 +20,7 @@ namespace AlphabetManipulator.Tests.Integration.Controllers
 
             var responseBody = await client.GetStringAsync("/api/GeometricAlphabet/a");
 
-            Assert.Equal("a", responseBody);
+            Assert.Equal("A", responseBody);
         }
     }
 }

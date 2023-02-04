@@ -1,4 +1,4 @@
-﻿using AlphabetManipulator.Services.AlphabetWriters;
+﻿using AlphabetManipulator.Services.GeometricAlphabetService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlphabetManipulator.Controllers;
@@ -18,10 +18,11 @@ public class GeometricAlphabetController : ControllerBase
 
     [HttpGet("{letter}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public ActionResult<string> GetShape(char letter)
+    public ActionResult<string> Get(char letter)
     {
-        // letter validation aA-zZ
-        return Ok("a");
+        var geometricAlphabet = _geometricAlphabet.CreateFromChar(letter);
+
+        return Ok(geometricAlphabet);
     }
 }
 
