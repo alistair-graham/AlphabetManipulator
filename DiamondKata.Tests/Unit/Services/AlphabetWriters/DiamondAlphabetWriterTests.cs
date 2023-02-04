@@ -1,9 +1,8 @@
 ﻿using DiamondKata.Services.AlphabetWriters;
 using Xunit;
 using Moq;
-using Microsoft.Extensions.Logging;
 
-namespace DiamondKata.Tests;
+namespace DiamondKata.Tests.Unit.Services.AlphabetWriters;
 
 public class DiamondAlphabetWriterTests
 {
