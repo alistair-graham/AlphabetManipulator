@@ -6,7 +6,8 @@
   "profiles": {
     "AlphabetManipulator.Tests": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:48099",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:60971",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

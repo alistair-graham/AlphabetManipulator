@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace AlphabetManipulator.Services.GeometricAlphabetService
 {
-	public class DiamondAlphabet : IGeometricAlphabet
+	public class DiamondAlphabetService : IGeometricAlphabetService
     {
-        private readonly ILogger<DiamondAlphabet> _logger;
+        private readonly ILogger<DiamondAlphabetService> _logger;
         private const int ASCIIDecimal_A = 65;
 
-		public DiamondAlphabet(ILogger<DiamondAlphabet> logger)
+		public DiamondAlphabetService(ILogger<DiamondAlphabetService> logger)
 		{
             _logger = logger;
-		}   
+		}
 
-        public string CreateFromChar(char maxLetter)
+        public  string CreateFromChar(char maxLetter)
         {
             var lineList = new List<string>();
 
@@ -73,7 +71,7 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
             {
                 return 0;
             }
-            return (2 * (letter - ASCIIDecimal_A)) - 1;
+            return (2 * (letter - 'A')) - 1;
         }
     }
 }

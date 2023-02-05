@@ -18,10 +18,13 @@ namespace AlphabetManipulator.Tests.Integration.Controllers
         {
             var client = _factory.CreateClient();
 
-            var responseBody = await client.GetStringAsync("/api/GeometricAlphabet/a");
+            var responseBody = await client.GetStringAsync("/api/GeometricAlphabet/A");
 
             Assert.Equal("A", responseBody);
         }
+
+        // test endpoints, not supplying char, non a-z char, upper or lowercase, multiple characters
+        // Maybe take some of these and do controller tests?
     }
 }
 
