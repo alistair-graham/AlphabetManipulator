@@ -12,21 +12,28 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
             _logger = logger;
 		}
 
-        public  string CreateFromChar(char maxLetter)
+        public string CreateFromLetter(char highestLetter)
         {
+            if (!char.IsLetter(highestLetter))
+            {
+                throw new ArgumentOutOfRangeException(nameof(highestLetter), $"Argument must be a letter, instead was <{highestLetter}>");
+            }
+
+            highestLetter = char.ToUpper(highestLetter);
+
             var lineList = new List<string>();
 
-            BuildAlphabetTriangle(lineList, maxLetter);
+            BuildAlphabetTriangle(lineList, highestLetter);
             TransformAlphabetTriangleToDiamond(lineList);
 
             return string.Join("\n", lineList);
         }
 
-        private static void BuildAlphabetTriangle(List<string> lineList, char maxLetter)
+        private static void BuildAlphabetTriangle(List<string> lineList, char highestLetter)
         {
-            for (var letter = 'A'; letter <= maxLetter; letter++)
+            for (var letter = 'A'; letter <= highestLetter; letter++)
             {
-                var line = CreateLine(letter, maxLetter);
+                var line = CreateLine(letter, highestLetter);
                 lineList.Add(line);
             }
         }
@@ -39,11 +46,11 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
             }
         }
 
-        private static string CreateLine(char letter, char maxLetter)
+        private static string CreateLine(char letter, char highestLetter)
         {
             var lineBuilder = new StringBuilder();
 
-            var outerSpacing = GetExteriorSpacing(letter, maxLetter);
+            var outerSpacing = GetExteriorSpacing(letter, highestLetter);
             var interiorSpacing = GetInteriorSpacing(letter);
 
             lineBuilder.Append(' ', outerSpacing);
@@ -60,9 +67,9 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
             return lineBuilder.ToString();
         }
 
-        private static int GetExteriorSpacing(char letter, char maxLetter)
+        private static int GetExteriorSpacing(char letter, char highestLetter)
         {
-            return maxLetter - letter;
+            return highestLetter - letter;
         }
 
         private static int GetInteriorSpacing(char letter)

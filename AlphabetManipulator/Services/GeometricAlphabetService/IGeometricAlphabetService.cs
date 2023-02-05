@@ -2,6 +2,6 @@
 {
 	public interface IGeometricAlphabetService
     {
-		public string CreateFromChar(char character);
+		public string CreateFromLetter(char character);
 	}
 }

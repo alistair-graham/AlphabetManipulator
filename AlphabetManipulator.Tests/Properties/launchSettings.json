@@ -7,7 +7,7 @@
     "AlphabetManipulator.Tests": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:60971",
+      "applicationUrl": "http://localhost:57322",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

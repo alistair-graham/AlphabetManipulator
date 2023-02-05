@@ -22,7 +22,7 @@ public class GeometricAlphabetController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<string> Get([Range('A', 'Z')] char letter)
     {
-        var geometricAlphabet = _geometricAlphabet.CreateFromChar(letter);
+        var geometricAlphabet = _geometricAlphabet.CreateFromLetter(letter);
 
         return Ok(geometricAlphabet);
     }
