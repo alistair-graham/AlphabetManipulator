@@ -61,14 +61,15 @@ B B
         Assert.Equal(expectedDiamond, result);
     }
 
-    [Fact]
-    public void CreateFromChar_NonAlphabeticalCharacter_ThrowsArgumentOutOfBoundsException()
+    [Theory]
+    [InlineData('@')] // ASCII char before A-Z
+    [InlineData('[')] // ASCII char between A-Z and a-z
+    [InlineData('}')] // ASCII char after a-z
+    public void CreateFromChar_NonAlphabeticalCharacter_ThrowsArgumentOutOfBoundsException(char nonAlphabeticalCharacter)
     {
-        const char NON_ALPHABETICAL_CHARACTER = ']';
-
-        var action = () => _diamondAlphabetService.CreateFromLetter(NON_ALPHABETICAL_CHARACTER);
+        var action = () => _diamondAlphabetService.CreateFromLetter(nonAlphabeticalCharacter);
 
         var exception = Assert.Throws<ArgumentOutOfRangeException>(action);
-        Assert.Equal("Argument must be a letter, instead was <]> (Parameter 'highestLetter')", exception.Message);
+        Assert.Equal($"Argument must be a letter, instead was <{nonAlphabeticalCharacter}> (Parameter 'highestLetter')", exception.Message);
     }
 }
