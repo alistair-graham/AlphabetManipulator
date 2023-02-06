@@ -25,5 +25,5 @@ The GET action `localhost:5071/api/GeometricAlphabet/{letter}` expects a letter 
 ## What I have not done
 - Authentication:  Checking who is sending the request.
 - Authorisation: Checking what actions a requester is allowed to perform.
-- Rate limiting, caching, CORS, status page, timing metrics + alerts, public API documentation, use [APIController] attribute on controllers instead of [ControllerBase], handling headers such as `Accept` etc.
+- Rate limiting, caching, CORS, status page, timing metrics + alerts, public API documentation, use `[APIController]` attribute on controllers instead of `[ControllerBase]`, handling headers such as `Accept` etc.
 - A whole lot of other things.
