@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/AlphabetManipulator.Tests.props" />
-</Project>

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/DiamondKata.Tests.props" />
-</Project>
