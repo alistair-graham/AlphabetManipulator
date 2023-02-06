@@ -18,6 +18,8 @@ public class GeometricAlphabetController : ControllerBase
     }
 
     [HttpGet("{letter}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<string> Get(char letter)
     {
         if (!char.IsLetter(letter))
