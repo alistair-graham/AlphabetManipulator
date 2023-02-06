@@ -24,7 +24,7 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    "AlphabetManipulator": {
+    "AlphabetManipulator-Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

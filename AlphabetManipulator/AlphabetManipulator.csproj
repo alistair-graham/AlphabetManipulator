@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'AlphabetManipulator-Production' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'AlphabetManipulator-Development' " />
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
