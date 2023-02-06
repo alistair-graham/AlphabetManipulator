@@ -6,7 +6,6 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
 	public class DiamondAlphabetService : IGeometricAlphabetService
     {
         private readonly ILogger<DiamondAlphabetService> _logger;
-        private const int ASCIIDecimal_A = 65;
 
 		public DiamondAlphabetService(ILogger<DiamondAlphabetService> logger)
 		{

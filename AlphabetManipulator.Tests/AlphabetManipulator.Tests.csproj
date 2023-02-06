@@ -26,15 +26,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Unit\" />
     <None Remove="Moq" />
-    <None Remove="Unit\Services\" />
     <None Remove="Microsoft.AspNetCore.Mvc.Testing" />
+    <None Remove="Tests\" />
+    <None Remove="Tests\E2E\" />
+    <None Remove="Tests\Unit\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Unit\" />
-    <Folder Include="E2E\Controllers\" />
-    <Folder Include="Unit\Services\" />
+    <Folder Include="Tests\" />
+    <Folder Include="Tests\E2E\" />
+    <Folder Include="Tests\Unit\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlphabetManipulator\AlphabetManipulator.csproj">
