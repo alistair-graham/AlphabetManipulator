@@ -12,9 +12,9 @@
 
 &emsp;`dotnet run --launch-profile AlphabetManipulator-Production`
 
-&emsp;Or run it from an IDE. If you run it from an IDE using the development launch profile, it automatically opens the Swagger API specification in your &emsp;browser. You can manually test the API via Swagger or from a request creator like Postman.
+Or run it from an IDE. If you run it from an IDE using the development launch profile, it automatically opens the Swagger API specification in your browser. You can manually test the API via Swagger or from a request creator like Postman.
 
-## What is does
+## What it does
 
 The GET action `localhost:5071/api/GeometricAlphabet/{letter}` expects a letter and returns the corresponding diamond. Here are the following responses given the request:
 - Providing an alphabetic character returns a 200 with the corresponding letter diamond.
