@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
+using System.Diagnostics.Metrics;
+using System.Net;
 using Xunit;
 
 namespace AlphabetManipulator.Tests.Integration.Controllers
@@ -23,8 +25,28 @@ namespace AlphabetManipulator.Tests.Integration.Controllers
             Assert.Equal("A", responseBody);
         }
 
-        // test endpoints, not supplying char, non a-z char, upper or lowercase, multiple characters
-        // Maybe take some of these and do controller tests?
+        [Fact]
+        public async void Get_WithNonAlphabeticalCharacter_ReturnsBadRequest()
+        {
+            var nonAlphabeticalCharacter = "5";
+            var client = _factory.CreateClient();
+
+            var response = await client.GetAsync($"/api/GeometricAlphabet/{nonAlphabeticalCharacter}");
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.Equal($"Must provide [A-Z] letter in the URL path, instead provided <{nonAlphabeticalCharacter}>.", responseBody);
+        }
+
+        [Fact]
+        public async void Get_MultipleCharacters_ReturnsNonSuccess()
+        {
+            var client = _factory.CreateClient();
+
+            var response = await client.GetAsync($"/api/GeometricAlphabet/ABC");
+
+            Assert.True(((int)response.StatusCode) >= 300);
+        }
     }
 }
 
