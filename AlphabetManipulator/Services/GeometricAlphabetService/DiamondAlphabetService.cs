@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Metrics;
+using System.Text;
 
 namespace AlphabetManipulator.Services.GeometricAlphabetService
 {
@@ -16,6 +17,7 @@ namespace AlphabetManipulator.Services.GeometricAlphabetService
         {
             if (!char.IsLetter(highestLetter))
             {
+                _logger.LogError($"[CreateFromLetter] method argument '{nameof(highestLetter)}' must be a letter. Instead received <{highestLetter}>.");
                 throw new ArgumentOutOfRangeException(nameof(highestLetter), $"Argument must be a letter, instead was <{highestLetter}>");
             }
 

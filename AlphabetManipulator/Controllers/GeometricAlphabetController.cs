@@ -22,6 +22,7 @@ public class GeometricAlphabetController : ControllerBase
     {
         if (!char.IsLetter(letter))
         {
+            _logger.LogWarning($"Get action argument '{nameof(letter)}' must be a letter. Instead received <{letter}>.");
             return BadRequest($"Must provide [A-Z] letter in the URL path, instead provided <{letter}>.");
         }
 

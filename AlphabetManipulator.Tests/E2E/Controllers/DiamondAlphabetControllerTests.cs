@@ -3,7 +3,7 @@ using System.Diagnostics.Metrics;
 using System.Net;
 using Xunit;
 
-namespace AlphabetManipulator.Tests.Integration.Controllers
+namespace AlphabetManipulator.Tests.E2E.Controllers
 {
     public class DiamondAlphabetControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {
@@ -39,13 +39,13 @@ namespace AlphabetManipulator.Tests.Integration.Controllers
         }
 
         [Fact]
-        public async void Get_MultipleCharacters_ReturnsNonSuccess()
+        public async void Get_MultipleCharacters_ReturnsBadRequest()
         {
             var client = _factory.CreateClient();
 
             var response = await client.GetAsync($"/api/GeometricAlphabet/ABC");
 
-            Assert.True(((int)response.StatusCode) >= 300);
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
     }
 }

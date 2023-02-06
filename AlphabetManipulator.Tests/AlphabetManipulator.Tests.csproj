@@ -33,7 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Unit\" />
-    <Folder Include="Integration\Controllers\" />
+    <Folder Include="E2E\Controllers\" />
     <Folder Include="Unit\Services\" />
   </ItemGroup>
   <ItemGroup>
