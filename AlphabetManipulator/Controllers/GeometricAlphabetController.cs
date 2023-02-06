@@ -18,12 +18,16 @@ public class GeometricAlphabetController : ControllerBase
     }
 
     [HttpGet("{letter}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<string> Get([Range('A', 'Z')] char letter)
+    public ActionResult<string> Get(char letter)
     {
+        if (!char.IsLetter(letter))
+        {
+            return BadRequest($"Must provide [A-Z] letter in the URL path, instead provided <{letter}>.");
+        }
+
         var geometricAlphabet = _geometricAlphabet.CreateFromLetter(letter);
 
         return Ok(geometricAlphabet);
+        
     }
 }
