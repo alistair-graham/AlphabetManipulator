@@ -1,5 +1,12 @@
 # Alphabet Manipulator
 
+## Tech Stack
+- ASP.NET Core 6
+- C# 10
+- RESTful Web API
+- Xunit testing framework
+- Swagger
+
 ## Assumptions
 - A RESTful API
 - Accepts any letter and returns an uppercase letter diamond.
